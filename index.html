@@ -1,102 +1,160 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine Surprise for Priyu ❤️</title>
+    <title>For My Valentine ❤️</title>
     <style>
-        body { background-color: #ffb6c1; font-family: 'Arial', sans-serif; text-align: center; margin: 0; padding: 0; overflow-x: hidden; color: #8b0000; }
-        .page { display: none; min-height: 100vh; padding: 20px; box-sizing: border-box; }
-        .active { display: flex; flex-direction: column; align-items: center; justify-content: center; animation: fadeIn 0.5s; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        /* Exact Colors & Fonts from the Video */
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap');
+
+        body {
+            background-color: #ffb1d8; /* The specific pink background */
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            color: #4a001a;
+        }
+
+        .page {
+            display: none;
+            min-height: 100vh;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .active { display: flex; }
+
+        /* Floating Hearts Animation from Video */
+        .hearts-decor { width: 150px; margin-bottom: 20px; }
         
-        /* 1st Page Style */
-        .hearts-dangle { width: 100%; max-width: 250px; }
-        .main-img { width: 180px; margin-top: 10px; }
-        .calendar { width: 150px; margin: 20px 0; }
-        .btn { padding: 12px 25px; font-size: 16px; border-radius: 20px; border: 1px solid #000; cursor: pointer; margin: 10px; font-weight: bold; }
-        .yes-btn { background: #ff4d94; color: white; }
-        .no-btn { background: #ccc; position: absolute; }
+        h1 {
+            font-family: 'Dancing Script', cursive; /* Used for "Hey Halima" */
+            font-size: 38px;
+            margin: 10px 0;
+        }
 
-        /* 3rd Page (Rose) Style */
-        .rose-img { width: 250px; border-radius: 15px; margin: 20px 0; border: 2px solid #ff4d94; background: white; padding: 10px; }
-        .click-me-heart { font-size: 50px; cursor: pointer; animation: pulse 1s infinite; margin-top: 20px; }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.2); } 100% { transform: scale(1); } }
+        .calendar { width: 140px; margin: 20px 0; }
+        
+        .btn {
+            padding: 12px 35px;
+            font-size: 18px;
+            border-radius: 25px;
+            border: 1.5px solid #000;
+            cursor: pointer;
+            font-weight: 600;
+            margin: 10px;
+            transition: 0.3s;
+        }
 
-        /* 4th Page (Letter) Style */
-        .letter-bg { background: #fdf5e6; border: 1px solid #d2b48c; padding: 30px; border-radius: 5px; box-shadow: 5px 5px 15px rgba(0,0,0,0.1); position: relative; max-width: 350px; text-align: left; line-height: 1.6; }
-        .corner-cat { width: 80px; position: absolute; bottom: 10px; right: 10px; }
+        .yes-btn { background-color: #ff4d94; color: white; border: none; }
+        .no-btn { background-color: #bdc3c7; color: white; border: none; position: absolute; }
 
-        /* 5th Page (Memories) Style */
-        .memories-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 10px; }
-        .memories-grid img { width: 100%; border-radius: 10px; border: 3px solid white; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        /* Page 3: Rose Bouquet Style */
+        .rose-bouquet { width: 280px; margin: 20px 0; }
+        .click-me-icon { font-size: 45px; cursor: pointer; animation: beat 1s infinite; }
+        @keyframes beat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
+
+        /* Page 4: Letter Theme */
+        .letter-container {
+            background-color: #fff0f5;
+            background-image: radial-gradient(#ffc0cb 0.5px, transparent 0.5px);
+            background-size: 20px 20px;
+            padding: 40px 30px;
+            border-radius: 10px;
+            border: 1px solid #ffb6c1;
+            box-shadow: 10px 10px 0px #ff4d94;
+            max-width: 320px;
+            position: relative;
+            text-align: left;
+            line-height: 1.8;
+        }
+        .cat-emoji { width: 70px; position: absolute; bottom: 10px; right: 10px; }
+
+        /* Page 5: Memory Grid */
+        .memories-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            max-width: 400px;
+        }
+        .memories-container img {
+            width: 100%;
+            border-radius: 5px;
+            border: 5px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body>
 
-<div id="page1" class="page active">
-    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHp6bm53NXlybmZ3bnZ3Znd3Znd3Znd3Znd3Znd3Znd3Znd3Jm09Zw/KztT2c4u8mYYUiMKdJ/giphy.gif" class="hearts-dangle">
-    <h1 style="font-family: 'Brush Script MT', cursive; font-size: 40px;">Hey Halima (priyu) 😭💐,</h1>
-    <h2>Will you be my Valentine? ❤️</h2>
-    <img src="https://i.ibb.co/h7gJv9D/calendar.png" class="calendar" alt="14 Feb Calendar">
-    <button class="btn yes-btn" onclick="nextPage(2)">YES OF COURSE</button>
-    <button class="btn no-btn" id="noBtn" onmouseover="moveNo()">NO THANK YOU</button>
-</div>
-
-<div id="page2" class="page">
-    <h1 style="font-size: 50px;">Yay, you said yes! ❤️</h1>
-    <p>I made all these for you,</p>
-    <button class="btn yes-btn" onclick="nextPage(3)">Open Your Gift</button>
-</div>
-
-<div id="page3" class="page">
-    <h1 style="color: #ff4d94;">Your Rose Bouquet</h1>
-    <p>I will always love you no matter what</p>
-    <img src="https://i.ibb.co/1qzqM2W/roses.png" class="rose-img" alt="Rose Bouquet">
-    <p>You are the best part of my life</p>
-    <p>You will forever be my only option.</p>
-    <p>I can't imagine a life without you in it</p>
-    <p style="margin-top:20px;">click me!</p>
-    <div class="click-me-heart" onclick="nextPage(4)">❤️</div>
-</div>
-
-<div id="page4" class="page">
-    <div class="letter-bg">
-        <h3 style="color: #d63384; border-bottom: 1px solid #ff4d94;">Words from my Heart</h3>
-        <p>The moments I've spent with you are unforgettable. Many Valentine's Days will come and go, but my love for you will remain forever. Tumi amar jiboner shobcheye shundor ongsho. ❤️</p>
-        <p>Always, Forever</p>
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnhrMTN1emF4Y2Y0eHhyZnd3Znd3Znd3Znd3Znd3Znd3Znd3Jm09Zw/MDJ9IbM9pWdgM8+H8A/giphy.gif" class="corner-cat">
+    <div id="p1" class="page active">
+        <img src="https://i.ibb.co/h7gJv9D/calendar.png" style="width: 100px; position: absolute; top: 20px;" alt="Hearts">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHp6bm53NXlybmZ3bnZ3Znd3Znd3Znd3Znd3Znd3Znd3Znd3Jm09Zw/KztT2c4u8mYYUiMKdJ/giphy.gif" style="width: 200px;">
+        <h1>Hey Halima (priyu) 😭💐,</h1>
+        <p style="font-size: 22px; font-weight: bold;">Will you be my Valentine? ❤️</p>
+        <img src="https://i.postimg.cc/85M0Lz48/calendar-14.png" class="calendar"> <button class="btn yes-btn" onclick="go(2)">YES OF COURSE</button>
+        <button class="btn no-btn" id="nb" onmouseover="moveNo()">NO THANK YOU</button>
     </div>
-    <p style="margin-top:20px; color: white;">click me!</p>
-    <div class="click-me-heart" onclick="nextPage(5)">❤️</div>
-</div>
 
-<div id="page5" class="page">
-    <h1>Our Memories</h1>
-    <p>I love you forever ❤️</p>
-    <div class="memories-grid">
-        <img src="https://via.placeholder.com/300" alt="Memory 1">
-        <img src="https://via.placeholder.com/300" alt="Memory 2">
-        <img src="https://via.placeholder.com/300" alt="Memory 3">
-        <img src="https://via.placeholder.com/300" alt="Memory 4">
+    <div id="p2" class="page">
+        <h1 style="font-size: 45px;">Yay, you said yes! ❤️</h1>
+        <p>I made all these for you ,</p>
+        <button class="btn yes-btn" onclick="go(3)" style="padding: 10px 40px; border: 2px solid white;">Open Your Gift</button>
     </div>
-    <p onclick="location.reload()" style="cursor:pointer; text-decoration: underline; margin-top: 20px;">Click me to Restart ❤️❤️❤️</p>
-</div>
 
-<script>
-    function nextPage(pageNum) {
-        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-        document.getElementById('page' + pageNum).classList.add('active');
-        window.scrollTo(0, 0);
-    }
+    <div id="p3" class="page">
+        <h1 style="color: #d61c59;">Your Rose Bouquet</h1>
+        <p><i>I will always love you no matter what</i></p>
+        <img src="https://i.postimg.cc/G2pYFp6y/roses.png" class="rose-bouquet">
+        <p>You are the best part of my life</p>
+        <p>You will forever be my only option.</p>
+        <p>I can't imagine a life without you in it</p>
+        <p style="margin-top: 30px;">click me!</p>
+        <div class="click-me-icon" onclick="go(4)">🤍</div>
+    </div>
 
-    function moveNo() {
-        const btn = document.getElementById('noBtn');
-        const x = Math.random() * (window.innerWidth - btn.offsetWidth);
-        const y = Math.random() * (window.innerHeight - btn.offsetHeight);
-        btn.style.left = x + 'px';
-        btn.style.top = y + 'px';
-    }
-</script>
+    <div id="p4" class="page">
+        <div class="letter-container">
+            <h3 style="color: #ff4d94; margin-top: 0;">Words from my Heart</h3>
+            <p>The moments I've spent with you are unforgettable. Many Valentine's Days will come and go, but my love for you will remain forever. Tumi amar jiboner shobcheye shundor ongsho. ❤️</p>
+            <p>Always, Forever</p>
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnhrMTN1emF4Y2Y0eHhyZnd3Znd3Znd3Znd3Znd3Znd3Znd3Jm09Zw/MDJ9IbM9pWdgM8+H8A/giphy.gif" class="cat-emoji">
+        </div>
+        <p style="margin-top: 30px;">click me!</p>
+        <div class="click-me-icon" onclick="go(5)">🤍</div>
+    </div>
+
+    <div id="p5" class="page">
+        <h1 style="font-family: 'Dancing Script';">Our Memories</h1>
+        <p>I love you forever ❤️</p>
+        <div class="memories-container">
+            <img src="https://via.placeholder.com/200" alt="Memory 1">
+            <img src="https://via.placeholder.com/200" alt="Memory 2">
+            <img src="https://via.placeholder.com/200" alt="Memory 3">
+            <img src="https://via.placeholder.com/200" alt="Memory 4">
+        </div>
+        <p onclick="location.reload()" style="cursor:pointer; margin-top: 40px; font-weight: bold;">Click me to Restart ❤️❤️❤️</p>
+    </div>
+
+    <script>
+        function go(n) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById('p' + n).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        function moveNo() {
+            const b = document.getElementById('nb');
+            const x = Math.random() * (window.innerWidth - b.offsetWidth);
+            const y = Math.random() * (window.innerHeight - b.offsetHeight);
+            b.style.left = x + 'px';
+            b.style.top = y + 'px';
+        }
+    </script>
 </body>
 </html>
