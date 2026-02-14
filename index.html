@@ -6,6 +6,121 @@
     <title>Valentine Surprise for Halima ❤️</title>
         <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
     <style>
+    /* Letter Paper Styling */
+.letter-container {
+    background-color: #fff9e6; /* Notebook paper color */
+    background-image: linear-gradient(#e6e6e6 1px, transparent 1px);
+    background-size: 100% 30px; /* Line gap */
+    border-radius: 10px;
+    padding: 40px 20px;
+    width: 90%;
+    max-width: 350px;
+    position: relative;
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.1);
+    margin: 20px auto;
+    font-family: 'Fredoka', sans-serif;
+}
+
+/* Rose Bouquet on Corners */
+.corner-rose {
+    width: 60px;
+    position: absolute;
+    top: -15px;
+}
+.rose-left { left: -10px; }
+.rose-right { right: -10px; }
+
+/* Letter Text Styling */
+.letter-text p {
+    line-height: 30px; /* Line height lines er sathey milate */
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Red & Black Alternative Lines */
+.red-line { color: #d61c59; }
+.black-line { color: #333; }
+
+/* Bottom Cat & Click Me */
+.bottom-decor {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 20px;
+}
+.cute-cat { width: 80px; }
+.click-me-heart {
+    text-align: right;
+    cursor: pointer;
+}
+
+      /* Speech Bubble Shape */
+.msg-box {
+    background: white;
+    border: 3px solid #d61c59; /* Reddish border */
+    border-radius: 25px;
+    padding: 15px 20px;
+    margin: 20px auto;
+    width: 85%;
+    max-width: 300px;
+    position: relative; /* Pointer-er jonno dorkar */
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    color: #d61c59;
+    box-shadow: 0 0 20px rgba(255, 182, 193, 0.8); /* Glowing effect */
+}
+
+/* Bubble-er nicher oi chotto kon (Pointer) */
+.msg-box::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 30px;
+    border-width: 15px 15px 0 0;
+    border-style: solid;
+    border-color: #d61c59 transparent transparent transparent;
+}
+
+.msg-box::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 32px;
+    border-width: 12px 12px 0 0;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    z-index: 1;
+}
+
+/* Paper Plane Animation */
+.plane-container {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    margin: 10px 0;
+}
+.plane-img {
+    width: 60px;
+    position: absolute;
+    right: 10%;
+    transform: rotate(-10deg);
+}
+
+/* Glowing Heart Button */
+.glowing-heart {
+    font-size: 60px;
+    cursor: pointer;
+    display: inline-block;
+    filter: drop-shadow(0 0 15px white);
+    animation: heart-beat 1.5s infinite ease-in-out;
+}
+
+@keyframes heart-beat {
+    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px white); }
+    50% { transform: scale(1.2); filter: drop-shadow(0 0 30px #ff4d94); }
+}
+
          /* Box gulo te glowing effect add korar jonno */
 .msg-box, .letter-paper {
     background: rgba(255, 255, 255, 0.8);
@@ -148,29 +263,53 @@
         <p>I made all these for you ,</p>
         <button class="gift-btn" onclick="go(4)">open your gift</button>
     </div>
+       <div id="p4" class="page">
+    <h1 style="color: #d61c59; font-family: 'Fredoka';">Your Rose Bouquet</h1>
+    
+    <div class="msg-box">i will always love you no matter what ❤️</div>
+    <div class="msg-box">You are the best part of my life</div>
+    
+    <img src="https://i.ibb.co/G2pYFp6y/roses.png" style="width:240px; margin: 10px 0;">
 
-    <div id="p4" class="page">
-        <h1>Your Rose Bouquet</h1>
-        <div class="msg-box">i will always love you no matter what ❤️</div>
-        <div class="msg-box">You are the best part of my life</div>
-        <img src="https://i.ibb.co.com/HfBcwrX5/pngtree-3d-red-rose-bouquet-on-transparent-background-png-image-12815755.png" class="rose-img">
-        <div class="msg-box">You will forever be my only option</div>
-        <img src="https://cdn-icons-png.flaticon.com/512/739/739247.png" style="width:40px;">
-        <div class="msg-box">I can't imagine a life without you in it</div>
-        <p style="margin-top:10px;">click me!</p>
-        <div style="font-size:40px; cursor:pointer;" onclick="go(5)">🤍</div>
+    <div class="msg-box">You will forever be my only option</div>
+
+    <div class="plane-container">
+        <img src="https://i.ibb.co/739247/paper-plane.png" class="plane-img">
     </div>
 
+    <div class="msg-box">I can't imagine a life without you in it</div>
+
+    <p style="color: #d61c59; font-weight: bold; margin-top: 20px;">click me!</p>
+    <div class="glowing-heart" onclick="go(5)">🤍</div>
+    </div>
     <div id="p5" class="page">
-        <div class="letter-paper">
-            <img src="https://cdn-icons-png.flaticon.com/512/869/869854.png" class="flower-decor">
-            <h3 style="color:#ff4d94; font-family:'Dancing Script';">Words from my Heart</h3>
-            <p style="font-size: 14px; line-height: 1.6;">To the love of my life, you make my life so meaningful. I am so lucky to have you as my valentine this year... ❤️</p>
-            <p>Always, Forever</p>
-            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnhrMTN1emF4Y2Y0eHhyZnd3Znd3Znd3Znd3Znd3Znd3Znd3Jm09Zw/MDJ9IbM9pWdgM8+H8A/giphy.gif" class="cat-img">
-            <div style="text-align:right; font-size:30px; cursor:pointer;" onclick="go(6)">🤍</div>
+    <div class="letter-container">
+        <img src="https://i.ibb.co/G2pYFp6y/roses.png" class="corner-rose rose-left">
+        <img src="https://i.ibb.co/G2pYFp6y/roses.png" class="corner-rose rose-right">
+
+        <h3 style="color: #d61c59; text-align: center; margin-bottom: 10px;">Words from my Heart</h3>
+
+        <div class="letter-text">
+            <p class="black-line">To the love of my life,</p>
+            <p class="red-line">you make my life so meaningful</p>
+            <p class="black-line">and I am so lucky to have you</p>
+            <p class="red-line">as my valentine this year.</p>
+            <p class="black-line">I love you wholeheartedly and</p>
+            <p class="red-line">can't wait to continue loving you.</p>
+            <p class="black-line">Always, Forever ❤️</p>
+        </div>
+
+        <div class="bottom-decor">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnhrMTN1emF4Y2Y0eHhyZnd3Znd3Znd3Znd3Znd3Znd3Znd3Jm09Zw/MDJ9IbM9pWdgM8+H8A/giphy.gif" class="cute-cat">
+            
+            <div class="click-me-heart" onclick="go(6)">
+                <p style="margin:0; font-size:12px; color:#d61c59;">click me!</p>
+                <span style="font-size:40px; filter: drop-shadow(0 0 10px white);">🤍</span>
+            </div>
         </div>
     </div>
+</div>
+
 
     <div id="p6" class="page">
         <h1 class="memories-title">our memories</h1>
