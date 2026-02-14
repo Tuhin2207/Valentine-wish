@@ -3,74 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Valentine ❤️</title>
+    <title>My Forever Valentine ❤️</title>
     <style>
-        body { text-align: center; font-family: 'Arial', sans-serif; background-color: #ffe6f2; color: #d63384; margin: 0; padding: 20px; }
-        .container { background: white; padding: 20px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-top: 50px; display: inline-block; width: 90%; max-width: 500px; }
-        .btn { padding: 15px 25px; font-size: 18px; cursor: pointer; border: none; border-radius: 50px; margin: 10px; font-weight: bold; }
-        .yes { background-color: #ff4d94; color: white; }
-        .no { background-color: #ccc; position: absolute; }
-        #sad-page, #valentine-page { display: none; }
-        .photo-grid img { width: 100%; border-radius: 15px; margin-bottom: 15px; border: 3px solid #ff4d94; }
-        .letter { background: #fff0f5; padding: 20px; border-radius: 10px; font-style: italic; text-align: left; line-height: 1.6; border-left: 5px solid #ff4d94; }
-        .rose-img { width: 150px; }
+        :root { --primary-pink: #ff4d94; --soft-pink: #ffe6f2; }
+        body { background-color: var(--soft-pink); font-family: 'Poppins', sans-serif; text-align: center; margin: 0; padding: 20px; color: #d63384; overflow-x: hidden; }
+        .container { background: white; padding: 30px; border-radius: 30px; box-shadow: 0 10px 30px rgba(214, 51, 132, 0.2); display: inline-block; width: 90%; max-width: 450px; position: relative; z-index: 10; margin-top: 30px; }
+        h1 { font-size: 24px; margin-bottom: 20px; line-height: 1.4; }
+        .btn { padding: 15px 30px; font-size: 18px; cursor: pointer; border: none; border-radius: 50px; margin: 10px; font-weight: bold; transition: 0.3s; }
+        .yes { background-color: var(--primary-pink); color: white; box-shadow: 0 5px 15px rgba(255, 77, 148, 0.4); }
+        .no { background-color: #bdc3c7; color: white; position: absolute; z-index: 100; }
+        .letter { background: #fff9fb; padding: 25px; border-radius: 20px; font-style: italic; text-align: left; line-height: 1.8; border-left: 8px solid var(--primary-pink); margin: 25px 0; font-size: 16px; border-bottom: 2px solid #eee; }
+        .photo-grid { display: flex; flex-direction: column; gap: 20px; }
+        .photo-grid img { width: 100%; border-radius: 20px; border: 5px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        #valentine-page, #sad-page { display: none; }
+        /* Animated Background */
+        .heart { position: fixed; font-size: 20px; top: -10%; animation: fall 5s linear infinite; z-index: 1; opacity: 0.6; }
+        @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
     </style>
 </head>
 <body>
 
 <div id="ask-page" class="container">
-    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHp6bm53NXlybmZ3bnZ3Znd3Znd3Znd3Znd3Znd3Znd3Znd3Jm09Zw/KztT2c4u8mYYUiMKdJ/giphy.gif" width="150">
-    <h1>Hey [NAME], <br> Will you be my Valentine? ❤️</h1>
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHp6bm53NXlybmZ3bnZ3Znd3Znd3Znd3Znd3Znd3Znd3Znd3Jm09Zw/KztT2c4u8mYYUiMKdJ/giphy.gif" width="180">
+    <h1>Hey Halima (priyu) 😭💐, <br> Will you be my Valentine? ❤️</h1>
     <button class="btn yes" onclick="showLove()">YES OF COURSE</button>
     <button class="btn no" id="noBtn" onmouseover="moveBtn()" onclick="showSad()">NO THANK YOU</button>
 </div>
 
 <div id="sad-page" class="container">
-    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnB6M2o3YThqZnd3Znd3Znd3Znd3Znd3Znd3Znd3Znd3Znd3Jm09Zw/7SF5scGB2AFrO/giphy.gif" width="150">
-    <h1>Try again please :(</h1>
-    <button class="btn yes" onclick="backToAsk()">Try Again</button>
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnB6M2o3YThqZnd3Znd3Znd3Znd3Znd3Znd3Znd3Jm09Zw/7SF5scGB2AFrO/giphy.gif" width="180">
+    <h1>Maane ki? Try again! 💔🥺</h1>
+    <button class="btn yes" onclick="backToAsk()">Okay, Try Again</button>
 </div>
 
 <div id="valentine-page">
     <div class="container">
-        <h1>Yay! You said YES! 💖</h1>
-        <img class="rose-img" src="https://cdn-icons-png.flaticon.com/512/727/727790.png">
-        
+        <h1 style="color: var(--primary-pink);">Yay! You said YES! 💖</h1>
         <div class="letter">
-            <h3>Words from my Heart...</h3>
-            "To the love of my life, you make my life so meaningful. Durotto hoyto amader alada rakhe, kintu tumi shob somoy amar bhabnay acho. I love you wholeheartedly! ❤️"
-        </div>
+            <h3>My Dearest...</h3>
+            "To the most prettiest women in my life (halima) 😭😣🫶, who makes my world brighter. 
+            Many Valentine's Days will come and go, but my love for you will remain forever. You are the most expensive gift in my life,
+            The moments shared with you, are treasures I will never forget."💖🕊️
 
-        <h3>Our Memories:</h3>
-        <div class="photo-grid">
-            <img src="https://via.placeholder.com/400x500?text=Photo+1+Link+Boshan">
-            <img src="https://via.placeholder.com/400x500?text=Photo+2+Link+Boshan">
-            <img src="https://via.placeholder.com/400x500?text=Photo+3+Link+Boshan">
         </div>
-        <p>💌 Forever Yours</p>
+        
+        <h3>Our Sweet Memories:</h3>
+        <div class="photo-grid">
+            <img src="https://i.ibb.co/example/your-photo-1.jpg" alt="Memory 1">
+            <img src="https://i.ibb.co/example/your-photo-2.jpg" alt="Memory 2">
+        </div>
+        <p style="margin-top: 20px;">💌 Forever Yours</p>
     </div>
 </div>
 
 <script>
     function moveBtn() {
-        var x = Math.random() * (window.innerWidth - 150);
-        var y = Math.random() * (window.innerHeight - 150);
-        document.getElementById('noBtn').style.left = x + 'px';
-        document.getElementById('noBtn').style.top = y + 'px';
+        const btn = document.getElementById('noBtn');
+        const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+        const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+        btn.style.left = x + 'px';
+        btn.style.top = y + 'px';
     }
+
+    function showLove() {
+        document.getElementById('ask-page').style.display = 'none';
+        document.getElementById('valentine-page').style.display = 'block';
+        createHearts();
+    }
+
     function showSad() {
         document.getElementById('ask-page').style.display = 'none';
         document.getElementById('sad-page').style.display = 'block';
     }
+
     function backToAsk() {
         document.getElementById('sad-page').style.display = 'none';
         document.getElementById('ask-page').style.display = 'block';
     }
-    function showLove() {
-        document.getElementById('ask-page').style.display = 'none';
-        document.getElementById('valentine-page').style.display = 'block';
+
+    function createHearts() {
+        for(let i=0; i<30; i++) {
+            let heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            document.body.appendChild(heart);
+        }
     }
 </script>
-
 </body>
 </html>
