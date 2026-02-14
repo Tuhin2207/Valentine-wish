@@ -9,7 +9,7 @@
         
         :root { --main-pink: #ffb1d8; --text-color: #8b0000; }
         body { background-color: var(--main-pink); margin: 0; font-family: 'Poppins', sans-serif; text-align: center; color: var(--text-color); overflow-x: hidden; }
-        .page { display: none; min-height: 160vh; flex-direction: column; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; position: relative; }
+        .page { display: none; min-height: 150vh; flex-direction: column; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; position: relative; }
         .active { display: flex; animation: top-down 0.5s; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
@@ -19,8 +19,8 @@
         h1 { font-family: 'Dancing Script', cursive; font-size: 34px; margin: 5px 0; }
         p {font-family: 'Dancing Script', cursive; font-size: 34px; margin: 5px 0; }
         .calendar { width: 160px; margin: 10px 0; }
-        .paper-plane { width: 160px; margin: 15px bottom left: 2; }
-        .chocolate { width: 80px; position: absolute; bottom: 10px; right: 10px; }
+        .paper-plane { width: 190px; margin: 18px bottom left: 1; }
+        .chocolate { width: 100px; position: absolute; bottom: 10px; right: 10px; }
         
         .btn { padding: 10px 30px; font-size: 16px; border-radius: 20px; border: 1.5px solid #000; cursor: pointer; font-weight: 600; margin: 5px; }
         .yes-btn { background-color: #ff4d94; color: white; border: none; }
@@ -63,7 +63,7 @@
         <button class="btn yes-btn" onclick="go(3)">YES OF COURSE</button>
         <img src="https://i.ibb.co.com/whF1kCth/Picsart-26-02-14-18-14-46-192.png" class="paper-plane">
         <button class="btn no-btn" id="nb" onmouseover="move()" onclick="go(2)">NO THANK YOU</button>
-        <img src="https://cdn-icons-png.flaticon.com/512/2553/2553813.png" class="chocolate">
+        <img src="https://i.ibb.co.com/NdQ1h16y/Picsart-26-02-14-18-51-43-448.png" class="chocolate">
     </div>
 
     <div id="p2" class="page">
