@@ -6,6 +6,59 @@
     <title>Valentine Surprise for Halima ❤️</title>
         <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
     <style>
+    /* Page 7 Gallery Layout */
+.gallery-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 40px;
+    text-align: center;
+    font-family: 'Fredoka', sans-serif;
+}
+
+/* Hanging Hearts (Left Top) */
+.hanging-hearts {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 80px;
+}
+
+/* Different Photo Shapes */
+.photo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.photo-item {
+    border: 4px solid #d61c59;
+    overflow: hidden;
+}
+
+.shape-oval { border-radius: 50% 50% 30% 30%; width: 120px; height: 160px; }
+.shape-rect { width: 100px; height: 130px; }
+.shape-circle { border-radius: 50%; width: 110px; height: 110px; }
+.shape-blob { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; width: 120px; height: 120px; }
+
+/* Restart Section */
+.restart-section {
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+    text-align: center;
+}
+.triple-hearts { width: 60px; display: block; margin: 0 auto; }
+.restart-text {
+    color: #d61c59;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 14px;
+}
     /* Photobooth Page Container */
 .memories-container {
     position: relative;
@@ -409,19 +462,27 @@
 </div>
 
     <div id="p7" class="page">
-        <img src="https://i.ibb.co/Wb7C39m8/hanging-hearts.png" class="hanging-hearts" style="left:10px;">
-        <h1 class="memories-title">our memories</h1>
-        <div class="grid-container">
-            <img src="https://via.placeholder.com/150">
-            <img src="https://via.placeholder.com/150">
-            <img src="https://via.placeholder.com/150">
-            <img src="https://via.placeholder.com/150">
+        <div id="p7" class="page">
+    <div class="gallery-container">
+        <img src="https://i.ibb.co/v66mR0Xz/hanging-hearts.png" class="hanging-hearts">
+
+        <h3 style="color: black; margin-bottom: 5px;">Our Memories</h3>
+        
+        <div class="photo-grid">
+            <img src="YOUR_IMAGE_URL_1" class="photo-item shape-oval">
+            <img src="YOUR_IMAGE_URL_2" class="photo-item shape-rect">
+            <img src="YOUR_IMAGE_URL_3" class="photo-item shape-blob">
+            <img src="YOUR_IMAGE_URL_4" class="photo-item shape-circle">
+            <img src="YOUR_IMAGE_URL_5" class="photo-item shape-rect">
+            <img src="YOUR_IMAGE_URL_6" class="photo-item shape-blob">
         </div>
-        <div style="margin-top:30px; text-align:right; width:100%;">
-            <span style="font-size:30px;">❤️❤️❤️</span><br>
-            <a href="#" onclick="location.reload()" style="color:#8b0000; font-weight:bold;">click me to restart</a>
+
+        <div class="restart-section">
+            <img src="https://i.ibb.co/v66mR0Xz/three-hearts.png" class="triple-hearts">
+            <p class="restart-text" onclick="location.reload()">Click me to Restart</p>
         </div>
     </div>
+</div>
 
     <script>
         function go(n) {
