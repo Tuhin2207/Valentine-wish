@@ -29,26 +29,52 @@
         transform: scale(1);
     }
 }
-        /* Exact look from your screenshot */
-.try-btn {
-    background-color: #ef9280; /* Salmon/Pinkish color from screenshot */
-    color: #4a001a;            /* Dark text color */
-    padding: 12px 60px;        /* Longer button as seen in image */
+   /* Ei ekti class-ei shob button-er 3D look thakbe */
+.btn, .try-btn, .gift-btn {
+    padding: 12px 45px;
     font-size: 20px;
+    font-family: 'Fredoka', sans-serif; /* Rounded font like the image */
     font-weight: 600;
-    border: 2.5px solid #4a001a; /* Thick dark border */
-    border-radius: 40px;       /* Pill shape */
+    border-radius: 40px; /* Pill shape */
     cursor: pointer;
-    font-family: 'Fredoka', sans-serif;
-    box-shadow: 0 4px 0px #4a001a; /* Slight 3D effect border bottom */
-    transition: 0.2s;
+    border: 2.5px solid #4a001a; /* Dark Thick Border */
+    box-shadow: 0 5px 0px #4a001a; /* Dark Bottom Shadow for 3D effect */
+    transition: all 0.1s ease;
+    margin: 10px;
+    display: inline-block;
+    outline: none;
 }
 
-.try-btn:active {
-    transform: translateY(2px);
-    box-shadow: 0 2px 0px #4a001a;
+/* 1. Yes of Course Button Color */
+.yes-btn {
+    background-color: #ef9280; /* Salmon/Pinkish color from screenshot */
+    color: #4a001a;
 }
 
+/* 2. No Thank You Button Color */
+.no-btn {
+    background-color: #ef9280; 
+    color: #4a001a;
+    position: absolute; /* Moving property */
+}
+
+/* 3. Try Again Button Color */
+.try-btn {
+    background-color: #ef9280;
+    color: #4a001a;
+}
+
+/* 4. Open Your Gift Button Color */
+.gift-btn {
+    background-color: #ef9280;
+    color: #4a001a;
+}
+
+/* Button Click korle shadow niche nambe (Active state) */
+.btn:active, .try-btn:active, .gift-btn:active {
+    transform: translateY(3px); /* Button niche nambe */
+    box-shadow: 0 2px 0px #4a001a; /* Shadow choto hobe */
+}
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap');
         
         :root { --main-pink: #ffb1d8; --text-color: #8b0000; }
