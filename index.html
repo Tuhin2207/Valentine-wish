@@ -297,15 +297,58 @@
         .main-pic { width: 250px; border: 5px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
         .photobooth-trigger { color: #ff4d94; cursor: pointer; text-decoration: underline; font-weight: bold; }
 
-        /* Page 7 (Photobooth Grid) */
-        .grid-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: 350px; margin-top: 20px; }
-        .grid-container img { width: 100%; border: 3px solid white; }
-     .letter-text {
-    font-family: 'Fredoka', sans-serif; /* Thik image-er moto rounded font */
-    font-weight: 600; /* Lekha gulo mota ba Bold dekhate */
-    font-size: 18px;
-    letter-spacing: 0.5px; /* Lekhar majhe chotto gap */
-    text-align: left;
+       /* Page 7 Gallery Layout */
+.gallery-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 40px;
+    text-align: center;
+    font-family: 'Fredoka', sans-serif;
+}
+
+/* Hanging Hearts (Left Top) */
+.hanging-hearts {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 80px;
+}
+
+/* Different Photo Shapes */
+.photo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.photo-item {
+    border: 4px solid #d61c59;
+    overflow: hidden;
+}
+
+.shape-oval { border-radius: 50% 50% 30% 30%; width: 120px; height: 160px; }
+.shape-rect { width: 100px; height: 130px; }
+.shape-circle { border-radius: 50%; width: 110px; height: 110px; }
+.shape-blob { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; width: 120px; height: 120px; }
+
+/* Restart Section */
+.restart-section {
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+    text-align: center;
+}
+.triple-hearts { width: 60px; display: block; margin: 0 auto; }
+.restart-text {
+    color: #d61c59;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 14px;
 }
     </style>
 </head>
@@ -407,40 +450,29 @@
         </div>
     </div>
 </div>
-   <div id="p7" class="page" style="display: none; background-color: #ffb1d8; min-height: 100vh; position: relative; padding: 20px; box-sizing: border-box; text-align: center;">
-    
-    <img src="https://i.ibb.co/v66mR0Xz/hanging-hearts.png" style="width: 80px; position: absolute; top: 0; left: 10px; z-index: 10;">
+<div id="p7" class="page">
+    <div class="gallery-container">
+        <img src="https://i.ibb.co/v66mR0Xz/hanging-hearts.png" class="hanging-hearts">
 
-    <h1 style="color: #000; font-family: 'Fredoka', sans-serif; font-size: 28px; margin-top: 40px; margin-bottom: 20px;">Our Memories</h1>
-    
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 400px; margin: 0 auto;">
+        <h1 style="color: black; margin-bottom: 5px;">Our Memories</h1>
         
-        <div style="border: 4px solid #d61c59; border-radius: 50% 50% 30% 30%; width: 110px; height: 140px; overflow: hidden;">
-            <img src="YOUR_PHOTO_1" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="photo-grid">
+            <img src="YOUR_IMAGE_URL_1" class="photo-item shape-oval">
+            <img src="YOUR_IMAGE_URL_2" class="photo-item shape-rect">
+            <img src="YOUR_IMAGE_URL_3" class="photo-item shape-blob">
+            <img src="YOUR_IMAGE_URL_4" class="photo-item shape-circle">
+            <img src="YOUR_IMAGE_URL_5" class="photo-item shape-rect">
+            <img src="YOUR_IMAGE_URL_6" class="photo-item shape-blob">
         </div>
 
-        <div style="border: 4px solid #d61c59; width: 100px; height: 130px; overflow: hidden;">
-            <img src="YOUR_PHOTO_2" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="restart-section">
+            <img src="https://i.ibb.co/v66mR0Xz/three-hearts.png" class="triple-hearts">
+            <p class="restart-text" onclick="location.reload()">Click me to Restart</p>
         </div>
-
-        <div style="border: 4px solid #d61c59; border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; width: 120px; height: 120px; overflow: hidden;">
-            <img src="YOUR_PHOTO_3" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-
-        <div style="border: 4px solid #d61c59; border-radius: 50%; width: 110px; height: 110px; overflow: hidden;">
-            <img src="YOUR_PHOTO_4" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-        
-        <div style="border: 4px solid #d61c59; width: 120px; height: 100px; overflow: hidden;">
-            <img src="YOUR_PHOTO_5" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-    </div>
-
-    <div style="position: absolute; bottom: 30px; right: 20px; text-align: center;">
-        <img src="https://i.ibb.co/v66mR0Xz/three-hearts.png" style="width: 70px; display: block; margin: 0 auto 5px;">
-        <p onclick="location.reload()" style="color: #d61c59; font-family: 'Fredoka', sans-serif; font-weight: bold; text-decoration: underline; cursor: pointer; margin: 0; font-size: 14px;">Click me to Restart</p>
     </div>
 </div>
+
+ 
     <script>
         function go(n) {
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
