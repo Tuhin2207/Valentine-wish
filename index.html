@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valentine Surprise for Halima ❤️</title>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
     <style>
          /* Box gulo te glowing effect add korar jonno */
 .msg-box, .letter-paper {
@@ -28,6 +29,26 @@
         transform: scale(1);
     }
 }
+        /* Exact look from your screenshot */
+.try-btn {
+    background-color: #ef9280; /* Salmon/Pinkish color from screenshot */
+    color: #4a001a;            /* Dark text color */
+    padding: 12px 60px;        /* Longer button as seen in image */
+    font-size: 20px;
+    font-weight: 600;
+    border: 2.5px solid #4a001a; /* Thick dark border */
+    border-radius: 40px;       /* Pill shape */
+    cursor: pointer;
+    font-family: 'Fredoka', sans-serif;
+    box-shadow: 0 4px 0px #4a001a; /* Slight 3D effect border bottom */
+    transition: 0.2s;
+}
+
+.try-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0px #4a001a;
+}
+
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap');
         
         :root { --main-pink: #ffb1d8; --text-color: #8b0000; }
@@ -37,15 +58,15 @@
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         /* Page 1 Details */
-        .hanging-hearts { width: 129px; position: absolute; top: 0; animation: slide-down 1.0s; }
+        .hanging-hearts { width: 135px; position: absolute; top: 0; animation: slide-down 1.0s; }
         .bunny { width: 144px; margin: 10px top: 3; }
-        h1 { font-family: 'Dancing Script', cursive; font-size: 34px; margin: 5px 0; }
+        h1 { font-family: 'Fredoka', sans-serif; font-size: 34px; margin: 5px 0; }
         p {font-family: 'Dancing Script', cursive; font-size: 34px; margin: 5px 0; }
         .calendar { width: 160px; margin: 10px 0; }
         .paper-plane { width: 190px; margin: 18px bottom left: 1; }
         .chocolate { width: 100px; position: absolute; bottom: 10px; right: 10px; }
         
-        .btn { padding: 10px 30px; font-size: 16px; border-radius: 20px; border: 1.5px solid #000; cursor: pointer; font-weight: 600; margin: 5px; }
+        .btn { padding: 10px 30px; font-size: 16px; border-radius: 20px; border: 1.5px solid #000; cursor: pointer; font-weight: 600; margin: 8px; }
         .yes-btn { background-color: #ff4d94; color: white; border: none; }
         .no-btn { background-color: #e0e0e0; border: none; position: absolute; transition: 0.1s; }
 
@@ -66,7 +87,7 @@
         .cat-img { width: 70px; position: absolute; bottom: 5px; left: 5px; }
 
         /* Page 6 (Memories) */
-        .memories-title { color: red; font-family: 'Dancing Script'; font-size: 35px; }
+        .memories-title { color: red; font-family: 'Dancing Script'; font-size: 37px; }
         .main-pic { width: 250px; border: 5px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
         .photobooth-trigger { color: #ff4d94; cursor: pointer; text-decoration: underline; font-weight: bold; }
 
@@ -130,7 +151,7 @@
         <p>i love you forever</p>
         <img src="https://via.placeholder.com/250" class="main-pic">
         <div style="margin-top:20px;">
-            <span>📸</span> <span class="photobooth-trigger" onclick="go(7)">photobooth</span>
+            <span>📸</span> <ul> <span class="photobooth-trigger" onclick="go(7)">photobooth</span> <ul>
         </div>
     </div>
 
