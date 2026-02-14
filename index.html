@@ -3,88 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine Surprise ❤️</title>
+    <title>Valentine Surprise for Halima ❤️</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap');
-        body { background-color: #ffb1d8; margin: 0; font-family: 'Poppins', sans-serif; text-align: center; color: #4a001a; overflow-x: hidden; }
-        .page { display: none; min-height: 100vh; flex-direction: column; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; }
-        .active { display: flex; animation: fadeIn 0.8s; }
+        
+        :root { --main-pink: #ffb1d8; --text-color: #8b0000; }
+        body { background-color: var(--main-pink); margin: 0; font-family: 'Poppins', sans-serif; text-align: center; color: var(--text-color); overflow-x: hidden; }
+        .page { display: none; min-height: 100vh; flex-direction: column; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; position: relative; }
+        .active { display: flex; animation: fadeIn 0.5s; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        
-        /* Elements from the video */
-        .hanging-hearts { width: 100%; max-width: 200px; margin-top: -40px; }
-        .bunny { width: 150px; margin: 15px 0; }
-        .name-text { font-family: 'Dancing Script', cursive; font-size: 38px; margin: 10px 0; color: #8b0000; }
-        .calendar { width: 160px; margin: 15px 0; }
-        .btn { padding: 12px 35px; font-size: 18px; border-radius: 30px; border: 2px solid #000; cursor: pointer; font-weight: 600; margin: 10px; }
-        .yes-btn { background-color: #ff4d94; color: white; border: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-        .no-btn { position: absolute; background-color: #bdc3c7; color: white; border: none; transition: 0.1s; }
-        
-        /* Sad Page (Try Again) */
-        .broken-heart { width: 150px; margin-bottom: 20px; }
-        .try-again-btn { background-color: #ff4d94; color: white; border: none; padding: 10px 40px; border-radius: 20px; font-size: 18px; }
 
-        /* Other Style */
-        .rose-img { width: 280px; margin: 20px 0; border-radius: 10px; border: 5px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .heart-icon { font-size: 50px; cursor: pointer; animation: pulse 1s infinite; margin-top: 15px; }
-        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
-        .letter-paper { background: #fff9fb; border: 1px solid #ffb6c1; padding: 30px; border-radius: 5px; box-shadow: 8px 8px 0px #ff4d94; max-width: 320px; text-align: left; position: relative; }
-        .cat-gif { width: 80px; position: absolute; bottom: 10px; right: 10px; }
-        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: 400px; }
-        .grid img { width: 100%; border-radius: 5px; border: 3px solid white; }
+        /* Page 1 Details */
+        .hanging-hearts { width: 124px; position: absolute; top: 2; }
+        .bunny { width: 140px; margin: 10px 0; }
+        h1 { font-family: 'Dancing Script', cursive; font-size: 32px; margin: 5px 0; }
+        .calendar { width: 160px; margin: 10px 0; }
+        .paper-plane { width: 60px; margin: 5px 0; }
+        .chocolate { width: 80px; position: absolute; bottom: 10px; right: 10px; }
+        
+        .btn { padding: 10px 30px; font-size: 16px; border-radius: 20px; border: 1.5px solid #000; cursor: pointer; font-weight: 600; margin: 5px; }
+        .yes-btn { background-color: #ff4d94; color: white; border: none; }
+        .no-btn { background-color: #e0e0e0; border: none; position: absolute; transition: 0.1s; }
+
+        /* Page 2 (Sad) */
+        .broken-heart { width: 150px; }
+        .try-btn { background-color: #ff4d94; color: white; border: none; padding: 8px 30px; border-radius: 15px; }
+
+        /* Page 3 (Yay) */
+        .gift-btn { background: transparent; color: #8b0000; border: 2px solid #8b0000; padding: 8px 25px; font-family: 'Dancing Script'; font-size: 22px; }
+
+        /* Page 4 (Rose) */
+        .msg-box { background: rgba(255,255,255,0.4); border-radius: 10px; padding: 10px; margin: 5px; width: 85%; max-width: 300px; border: 1px solid #ff4d94; }
+        .rose-img { width: 250px; border-radius: 15px; margin: 10px 0; }
+
+        /* Page 5 (Letter) */
+        .letter-paper { background: #fff9fb; border: 1.5px solid #ffb6c1; padding: 25px; border-radius: 5px; box-shadow: 10px 10px 0px #ff4d94; max-width: 320px; text-align: left; position: relative; }
+        .flower-decor { width: 60px; position: absolute; top: -10px; right: -10px; }
+        .cat-img { width: 70px; position: absolute; bottom: 5px; left: 5px; }
+
+        /* Page 6 (Memories) */
+        .memories-title { color: red; font-family: 'Dancing Script'; font-size: 35px; }
+        .main-pic { width: 250px; border: 5px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .photobooth-trigger { color: #ff4d94; cursor: pointer; text-decoration: underline; font-weight: bold; }
+
+        /* Page 7 (Photobooth Grid) */
+        .grid-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: 350px; margin-top: 20px; }
+        .grid-container img { width: 100%; border: 3px solid white; }
     </style>
 </head>
 <body>
 
     <div id="p1" class="page active">
-        <img src="https://i.ibb.co.com/60PCfzHm/Picsart-26-02-14-16-29-03-346.png" border="0" class="hanging-hearts">
-        <img src="https://i.ibb.co.com/v6CJj6QZ/IMG-1090.gif" alt="IMG-1090" border="0" class="bunny">
-        <h1 class="name-text">Hey Halima (priyu)😭💐, Will you be my valentine.??😣💗</h1>
-        <img src="https://i.ibb.co.com/zWzmBBGG/IMG-1091.jpg" alt="IMG-1091" border="0"  class="calendar">
+        <img src="https://i.ibb.co/Wb7C39m8/hanging-hearts.png" class="hanging-hearts">
+        <img src="https://i.ibb.co/9F7mR0Xz/bunny-love.png" class="bunny">
+        <h1>Hey Halima (priyu) 😭💐,</h1>
+        <p style="font-weight:bold;">Will you be my Valentine?</p>
+        <img src="https://i.ibb.co/85M0Lz48/calendar-14.png" class="calendar">
         <button class="btn yes-btn" onclick="go(3)">YES OF COURSE</button>
+        <img src="https://cdn-icons-png.flaticon.com/512/739/739247.png" class="paper-plane">
         <button class="btn no-btn" id="nb" onmouseover="move()" onclick="go(2)">NO THANK YOU</button>
+        <img src="https://cdn-icons-png.flaticon.com/512/2553/2553813.png" class="chocolate">
     </div>
 
     <div id="p2" class="page">
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHp6bm53NXlybmZ3bnZ3Znd3Znd3Znd3Znd3Znd3Znd3Jm09Zw/7SF5scGB2AFrO/giphy.gif" class="broken-heart">
-        <h1 style="font-size: 30px;">Try again please :(</h1>
-        <button class="try-again-btn" onclick="go(1)">Try Again</button>
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnhrMTN1emF4Y2Y0eHhyZnd3Znd3Znd3Znd3Znd3Znd3Znd3Jm09Zw/7SF5scGB2AFrO/giphy.gif" class="broken-heart">
+        <h1>Try again please :(</h1>
+        <button class="btn try-btn" onclick="go(1)">Try Again</button>
     </div>
 
     <div id="p3" class="page">
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnhrMTN1emF4Y2Y0eHhyZnd3Znd3Znd3Znd3Znd3Znd3Znd3Jm09Zw/MDJ9IbM9pWdgM8+H8A/giphy.gif" width="150">
-        <h1 style="font-size: 45px; color: Red;">Yay, you said yes! ❤️</h1>
-        <p style="color: white; font-size: 18px;">I made all these for you,</p>
-        <button class="btn" onclick="go(4)" style="background: transparent; color: white; border: 2px solid white;">Open Your Gift</button>
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnhrMTN1emF4Y2Y0eHhyZnd3Znd3Znd3Znd3Znd3Znd3Znd3Jm09Zw/vS88mclTq68Y1qE5Fh/giphy.gif" width="120">
+        <h1>Yay, you said yes! ❤️</h1>
+        <p>I made all these for you ,</p>
+        <button class="gift-btn" onclick="go(4)">open your gift</button>
     </div>
 
     <div id="p4" class="page">
-        <h1 style="color: #d61c59;">Your Rose Bouquet</h1>
-        <p><i>I will always love you no matter what</i></p>
+        <h1>Your Rose Bouquet</h1>
+        <div class="msg-box">i will always love you no matter what ❤️</div>
+        <div class="msg-box">You are the best part of my life</div>
         <img src="https://i.ibb.co/G2pYFp6y/roses.png" class="rose-img">
-        <p>You are the best part of my life. You will forever be my only option.</p>
-        <div class="heart-icon" onclick="go(5)">🤍</div>
+        <div class="msg-box">You will forever be my only option</div>
+        <img src="https://cdn-icons-png.flaticon.com/512/739/739247.png" style="width:40px;">
+        <div class="msg-box">I can't imagine a life without you in it</div>
+        <p style="margin-top:10px;">click me!</p>
+        <div style="font-size:40px; cursor:pointer;" onclick="go(5)">🤍</div>
     </div>
 
     <div id="p5" class="page">
         <div class="letter-paper">
-            <h3 style="color: #ff4d94;">Words from my Heart</h3>
-            <p>The moments I've spent with you are unforgettable. Many Valentine's Days will come and go, but my love for you will remain forever. ❤️</p>
+            <img src="https://cdn-icons-png.flaticon.com/512/869/869854.png" class="flower-decor">
+            <h3 style="color:#ff4d94; font-family:'Dancing Script';">Words from my Heart</h3>
+            <p style="font-size: 14px; line-height: 1.6;">To the love of my life, you make my life so meaningful. I am so lucky to have you as my valentine this year... ❤️</p>
             <p>Always, Forever</p>
-            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnhrMTN1emF4Y2Y0eHhyZnd3Znd3Znd3Znd3Znd3Znd3Znd3Jm09Zw/MDJ9IbM9pWdgM8+H8A/giphy.gif" class="cat-gif">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnhrMTN1emF4Y2Y0eHhyZnd3Znd3Znd3Znd3Znd3Znd3Znd3Jm09Zw/MDJ9IbM9pWdgM8+H8A/giphy.gif" class="cat-img">
+            <div style="text-align:right; font-size:30px; cursor:pointer;" onclick="go(6)">🤍</div>
         </div>
-        <div class="heart-icon" onclick="go(6)">🤍</div>
     </div>
 
     <div id="p6" class="page">
-        <h1 class="name-text">Our Memories</h1>
-        <div class="grid">
-            <img src="https://i.ibb.co/9F7mR0Xz/bunny-love.png" alt="Memory">
-            <img src="https://i.ibb.co/G2pYFp6y/roses.png" alt="Memory">
-            <img src="https://i.ibb.co/Wb7C39m8/hanging-hearts.png" alt="Memory">
-            <img src="https://i.ibb.co/85M0Lz48/calendar-14.png" alt="Memory">
+        <h1 class="memories-title">our memories</h1>
+        <p>i love you forever</p>
+        <img src="https://via.placeholder.com/250" class="main-pic">
+        <div style="margin-top:20px;">
+            <span>📸</span> <span class="photobooth-trigger" onclick="go(7)">photobooth</span>
         </div>
-        <p onclick="location.reload()" style="cursor:pointer; margin-top:30px; font-weight:bold;">Click to Restart ❤️</p>
+    </div>
+
+    <div id="p7" class="page">
+        <img src="https://i.ibb.co/Wb7C39m8/hanging-hearts.png" class="hanging-hearts" style="left:10px;">
+        <h1 class="memories-title">our memories</h1>
+        <div class="grid-container">
+            <img src="https://via.placeholder.com/150">
+            <img src="https://via.placeholder.com/150">
+            <img src="https://via.placeholder.com/150">
+            <img src="https://via.placeholder.com/150">
+        </div>
+        <div style="margin-top:30px; text-align:right; width:100%;">
+            <span style="font-size:30px;">❤️❤️❤️</span><br>
+            <a href="#" onclick="location.reload()" style="color:#8b0000; font-weight:bold;">click me to restart</a>
+        </div>
     </div>
 
     <script>
@@ -95,8 +133,8 @@
         }
         function move() {
             const b = document.getElementById('nb');
-            b.style.left = Math.random() * (window.innerWidth - 150) + 'px';
-            b.style.top = Math.random() * (window.innerHeight - 100) + 'px';
+            b.style.left = Math.random() * (window.innerWidth - 120) + 'px';
+            b.style.top = Math.random() * (window.innerHeight - 50) + 'px';
         }
     </script>
 </body>
