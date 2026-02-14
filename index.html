@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine for Halima ❤️</title>
+    <title>Valentine Surprise ❤️</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap');
         body { background-color: #ffb1d8; margin: 0; font-family: 'Poppins', sans-serif; text-align: center; color: #4a001a; overflow-x: hidden; }
@@ -11,29 +11,27 @@
         .active { display: flex; animation: fadeIn 0.8s; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         
-        /* Elements from Video */
+        /* Elements from the video */
         .hanging-hearts { width: 100%; max-width: 200px; margin-top: -40px; }
         .bunny { width: 150px; margin: 15px 0; }
         .name-text { font-family: 'Dancing Script', cursive; font-size: 38px; margin: 10px 0; color: #8b0000; }
         .calendar { width: 160px; margin: 15px 0; }
-        
-        .btn { padding: 12px 35px; font-size: 18px; border-radius: 30px; border: 1.5px solid #000; cursor: pointer; font-weight: 600; margin: 10px; }
+        .btn { padding: 12px 35px; font-size: 18px; border-radius: 30px; border: 2px solid #000; cursor: pointer; font-weight: 600; margin: 10px; }
         .yes-btn { background-color: #ff4d94; color: white; border: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
         .no-btn { position: absolute; background-color: #bdc3c7; color: white; border: none; transition: 0.1s; }
         
-        /* Sad Page / Try Again Style */
+        /* Sad Page (Try Again) */
         .broken-heart { width: 150px; margin-bottom: 20px; }
         .try-again-btn { background-color: #ff4d94; color: white; border: none; padding: 10px 40px; border-radius: 20px; font-size: 18px; }
 
-        /* Other Pages */
-        .gift-btn { background: transparent; color: white; border: 2px solid white; border-radius: 5px; padding: 10px 30px; }
-        .rose-img { width: 280px; margin: 20px 0; border-radius: 10px; }
+        /* Other Style */
+        .rose-img { width: 280px; margin: 20px 0; border-radius: 10px; border: 5px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
         .heart-icon { font-size: 50px; cursor: pointer; animation: pulse 1s infinite; margin-top: 15px; }
         @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
         .letter-paper { background: #fff9fb; border: 1px solid #ffb6c1; padding: 30px; border-radius: 5px; box-shadow: 8px 8px 0px #ff4d94; max-width: 320px; text-align: left; position: relative; }
         .cat-gif { width: 80px; position: absolute; bottom: 10px; right: 10px; }
-        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: 400px; padding: 10px; }
-        .grid img { width: 100%; border-radius: 5px; border: 4px solid white; }
+        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: 400px; }
+        .grid img { width: 100%; border-radius: 5px; border: 3px solid white; }
     </style>
 </head>
 <body>
@@ -49,15 +47,16 @@
     </div>
 
     <div id="p2" class="page">
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHp6bm53NXlybmZ3bnZ3Znd3Znd3Znd3Znd3Znd3Znd3Znd3Jm09Zw/7SF5scGB2AFrO/giphy.gif" class="broken-heart">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHp6bm53NXlybmZ3bnZ3Znd3Znd3Znd3Znd3Znd3Znd3Jm09Zw/7SF5scGB2AFrO/giphy.gif" class="broken-heart">
         <h1 style="font-size: 30px;">Try again please :(</h1>
         <button class="try-again-btn" onclick="go(1)">Try Again</button>
     </div>
 
     <div id="p3" class="page">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnhrMTN1emF4Y2Y0eHhyZnd3Znd3Znd3Znd3Znd3Znd3Znd3Jm09Zw/MDJ9IbM9pWdgM8+H8A/giphy.gif" width="150">
         <h1 style="font-size: 45px; color: white;">Yay, you said yes! ❤️</h1>
-        <p style="color: white; font-size: 18px;">I made all these for you ,</p>
-        <button class="btn gift-btn" onclick="go(4)">Open Your Gift</button>
+        <p style="color: white; font-size: 18px;">I made all these for you,</p>
+        <button class="btn" onclick="go(4)" style="background: transparent; color: white; border: 2px solid white;">Open Your Gift</button>
     </div>
 
     <div id="p4" class="page">
@@ -65,7 +64,6 @@
         <p><i>I will always love you no matter what</i></p>
         <img src="https://i.ibb.co/G2pYFp6y/roses.png" class="rose-img">
         <p>You are the best part of my life. You will forever be my only option.</p>
-        <p>click me!</p>
         <div class="heart-icon" onclick="go(5)">🤍</div>
     </div>
 
@@ -76,19 +74,18 @@
             <p>Always, Forever</p>
             <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnhrMTN1emF4Y2Y0eHhyZnd3Znd3Znd3Znd3Znd3Znd3Znd3Jm09Zw/MDJ9IbM9pWdgM8+H8A/giphy.gif" class="cat-gif">
         </div>
-        <p style="margin-top: 20px;">click me!</p>
         <div class="heart-icon" onclick="go(6)">🤍</div>
     </div>
 
     <div id="p6" class="page">
         <h1 class="name-text">Our Memories</h1>
         <div class="grid">
-            <img src="https://via.placeholder.com/200" alt="Memory">
-            <img src="https://via.placeholder.com/200" alt="Memory">
-            <img src="https://via.placeholder.com/200" alt="Memory">
-            <img src="https://via.placeholder.com/200" alt="Memory">
+            <img src="https://i.ibb.co/9F7mR0Xz/bunny-love.png" alt="Memory">
+            <img src="https://i.ibb.co/G2pYFp6y/roses.png" alt="Memory">
+            <img src="https://i.ibb.co/Wb7C39m8/hanging-hearts.png" alt="Memory">
+            <img src="https://i.ibb.co/85M0Lz48/calendar-14.png" alt="Memory">
         </div>
-        <p onclick="location.reload()" style="cursor:pointer; margin-top:30px; font-weight:bold;">Click me to Restart ❤️❤️❤️</p>
+        <p onclick="location.reload()" style="cursor:pointer; margin-top:30px; font-weight:bold;">Click to Restart ❤️</p>
     </div>
 
     <script>
